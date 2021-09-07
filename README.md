@@ -1,7 +1,6 @@
 # RepositorioP
-test
+testxd
 Estoy en le repo JP
-push
-cosas sin conflicto
-conconflicto
-hpta
+pushxd
+hola alex
+hola alex2
