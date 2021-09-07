@@ -84,6 +84,7 @@ $cmensual = (($vcasa - $avivienda)-$cinicial)/ $t;
         <div class="card-body">
             <h5 class="card-title">Ingreso de datos</h5>
             <p class="card-text">ingrese acontinuacion los datos del cliente.</p>
+            
             <!-- Salida-->
                 <form class="form-horizontal" role="form" >
                     <div class="form-group">
