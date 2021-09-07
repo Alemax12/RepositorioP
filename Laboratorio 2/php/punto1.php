@@ -83,7 +83,7 @@ $cmensual = (($vcasa - $avivienda)-$cinicial)/ $t;
 
         <div class="card-body">
             <h5 class="card-title">Ingreso de datos</h5>
-            <p class="card-text">ingrese acontinuacion los datos del cliente.</p>
+            <p class="card-text">A continuacion los datos del cliente.</p>
             
             <!-- Salida-->
                 <form class="form-horizontal" role="form" >
@@ -112,11 +112,11 @@ $cmensual = (($vcasa - $avivienda)-$cinicial)/ $t;
                     	</div>
                     </div>
                     
+                <br>                    
             <!--Botones-->
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <a href="../html/punto1.html" class="btn btn-primary bg-dark"data-bs-toggle="modal"
-                    data-bs-target="#exampleModal">Volver</a>
+                        <a class="btn btn-primary bg-dark" href="../html/punto1.html" role="button">Volver</a>
                             
                         </div>
                     </div>
