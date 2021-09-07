@@ -41,28 +41,49 @@ $cmensual = (($vcasa - $avivienda)-$cinicial)/ $t;
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <title>Ejemplos</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    
+    </script>
+    <link href="styles/style.css"
+    rel="stylesheet" type="text/css">
+
+    <title>Vivienda para todos</title>
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Vivienda Para todos</h1>   
+
+
+<div class="container">
+        <div class="p-5 bg-secondary bg-opacity-25 rounded-3">
+            <h1>Vivienda para todos</h1>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="panel-group"><div class="panel panel-primary">
-            <div class="panel-heading">Datos del cliente</div>
-            <div class="panel-body">
     
+<br>
+<!--inicio de tarjeta-->
+    <div class="card">
+        <div class="card-header text-white bg-dark">
+            Formulario para datos del Cliente
+        </div>
 
+
+        <div class="card-body">
+            <h5 class="card-title">Ingreso de datos</h5>
+            <p class="card-text">ingrese acontinuacion los datos del cliente.</p>
             <!-- Salida-->
                 <form class="form-horizontal" role="form" >
                     <div class="form-group">
@@ -93,15 +114,17 @@ $cmensual = (($vcasa - $avivienda)-$cinicial)/ $t;
             <!--Botones-->
                     <div class="form-group">        
                         <div class="col-sm-offset-2 col-sm-10">
-                            <a class="btn btn-primary" href="../html/punto1.html" role="button">Volver</a>
+                            <a href="../html/punto1.html" class="btn btn-primary bg-dark"data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">Volver</a>
                             
                         </div>
                     </div>
 
 
                 </form>
-            </div>
-        </div>
+        </div> 
+            
     </div>
+</div>
 </body>
 </html>
