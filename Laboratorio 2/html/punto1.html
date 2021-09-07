@@ -1,50 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <title>Calculo de vivienda</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+        integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+        integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
+    
+    </script>
+    <link href="styles/style.css"
+    rel="stylesheet" type="text/css">
+
+    <title>Vivienda para todos</title>
 </head>
+
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1>Vivienda para todos</h1>   
+        <div class="p-5 bg-secondary bg-opacity-25 rounded-3">
+            <h1>Vivienda para todos</h1>
         </div>
-    </div>
-
-    <div class="container">
-        <div class="panel-group"><div class="panel panel-primary">
-            <div class="panel-heading">Formulario para datos del Cliente</div>
-            <div class="panel-body">
+    
+<br>
+<!--inicio de tarjeta-->
+    <div class="card">
+        <div class="card-header text-white bg-dark">
+            Formulario para datos del Cliente
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ingreso de datos</h5>
+            <p class="card-text">ingrese acontinuacion los datos del cliente.</p>
+            
+            <!--textbox y label-->
+            <form class="form-horizontal" role="form" action="../Laboratorio 2/php/punto1.php" method="POST">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="salario">Ingrese salario:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="s" name="s" placeholder="Ingrese el salario">
+                    </div>
+                </div>
                 <h1></h1>
-                <form class="form-horizontal" role="form" action="../php/punto1.php" method="POST">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="salario">Ingrese salario:</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="s" name="s" placeholder="Ingrese el salario">
-                        </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="edad">Ingrese el valor de la casa:</label>
+                    <div class="col-sm-10">          
+                        <input type="text" class="form-control" id="vcasa" name="vcasa" placeholder="Ingrese el valor de la casa">
                     </div>
-                    <h1></h1>
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="edad">Ingrese el valor de la casa:</label>
-                        <div class="col-sm-10">          
-                            <input type="text" class="form-control" id="vcasa" name="vcasa" placeholder="Ingrese el valor de la casa">
-                        </div>
-                    </div>
-                    
-                     <h1></h1>  
+                </div>
+            
+            
+            <!--<a class="btn btn-primary bg-dark" href="../Laboratorio 2/html/punto1.html" role="button">Ejercicio 1</a>
+            -->
 
-                    <div class="form-group">        
-                        <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Generar</button>
-                            
-                        </div>
-                    </div>
-                </form>
+            <!--boton de envio de datos-->
+            <br>
+
+            <div class="form-group">        
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary  bg-dark" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal">
+                    Generar
+                    </button>
+                </div>
             </div>
+
+
+
+        
+                    
         </div>
     </div>
+</div>
+       
+
+
+
+
 </body>
+
 </html>
