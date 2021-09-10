@@ -9,6 +9,12 @@ class Proceso
     private $utilizacion;
     private $tiempoPMT;
     private $retrasoPromedio;
+    private $orden;
+    private $letra1;
+    private $letra2;
+    private $letra3;
+    private $letra4;
+    private $metodo;
 
     public function __construct($tiempoProceso, $fechaEntrega)
     {
@@ -163,6 +169,26 @@ class Proceso
      *
      * @return  self
      */
+
+    /**
+     * Get the value of orden
+     */
+    public function getOrden()
+    {
+        return $this->orden;
+    }
+
+    /**
+     * Set the value of orden
+     *
+     * @return  self
+     */
+    public function setOrden($orden)
+    {
+        $this->orden = $orden;
+    }
+
+
     public function setRetrasoPromedio($retrasoPromedio)
     {
         $this->retrasoPromedio = $retrasoPromedio;
@@ -175,7 +201,7 @@ class Proceso
 
     public function calcularRetraso()
     {
-        if ($this->tiempoFlujo - $this->fechaEntrega <= 0) {
+        if ($this->tiempoFlujo - $this->fechaEntrega >= 0) {
             $this->retrasoTrabajo = $this->tiempoFlujo - $this->fechaEntrega;
         } else {
             $this->retrasoTrabajo = 0;
