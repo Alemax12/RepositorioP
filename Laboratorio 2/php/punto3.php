@@ -147,10 +147,10 @@ $unProceso4->calcularRetraso();
                     <tfoot>
                         <tr>
                             <td>TOTAL</td>
-                            <td><?php echo $TP=$unProceso1->getTiempoProceso() + $unProceso2->getTiempoProceso() + $unProceso3->getTiempoProceso() + $unProceso4->getTiempoProceso(); ?></td>
-                            <td><?php echo $TF=$unProceso1->getTiempoFlujo() + $unProceso2->getTiempoFlujo() + $unProceso3->getTiempoFlujo() + $unProceso4->getTiempoFlujo(); ?></td>
+                            <td><?php echo $TP = $unProceso1->getTiempoProceso() + $unProceso2->getTiempoProceso() + $unProceso3->getTiempoProceso() + $unProceso4->getTiempoProceso(); ?></td>
+                            <td><?php echo $TF = $unProceso1->getTiempoFlujo() + $unProceso2->getTiempoFlujo() + $unProceso3->getTiempoFlujo() + $unProceso4->getTiempoFlujo(); ?></td>
                             <td></td>
-                            <td><?php echo $RT=$unProceso1->getRetrasoTrabajo() + $unProceso2->getRetrasoTrabajo() + $unProceso3->getRetrasoTrabajo() + $unProceso4->getRetrasoTrabajo(); ?></td>
+                            <td><?php echo $RT = $unProceso1->getRetrasoTrabajo() + $unProceso2->getRetrasoTrabajo() + $unProceso3->getRetrasoTrabajo() + $unProceso4->getRetrasoTrabajo(); ?></td>
                         </tr>
                     </tfoot>
                 </table>
@@ -159,21 +159,25 @@ $unProceso4->calcularRetraso();
                 <form class="row g-3" role="form">
                     <div class="form-group col-3">
                         <label>Utilizacion:</label>
-                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TP/$TF; ?>>
+                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TP / $TF; ?>>
                     </div>
                     <div class="form-group col-3">
                         <label>Tiempo Promedio de terminacion:</label>
-                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TF/4; ?>>
+                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TF / 4; ?>>
                     </div>
                     <div class="form-group col-3">
                         <label>Trabajos en el sistema:</label>
-                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TF/$TP; ?>>
+                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $TF / $TP; ?>>
                     </div>
                     <div class="form-group col-3">
                         <label>Retraso promedio:</label>
-                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $RT/4; ?>>
+                        <input autocomplete="off" type="text" class="form-control" disabled="disabled" value=<?php echo $RT / 4; ?>>
                     </div>
+                </form>
+                <br>
+                <a class="btn btn-primary bg-dark" href="../index.html" role="button">Regresar</a>
             </div>
+
         </div>
     </div>
 
