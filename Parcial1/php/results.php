@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="en">
 
@@ -36,45 +38,47 @@
 
             <div class="card-body">
                 <h6>Resultados por mes</h6>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Periodo</th>
-                            <th>Inventario inicial</th>
-                            <th>Días de trabajo</th>
-                            <th>Tiempo disponible</th>
-                            <th>Producción real</th>
-                            <th>Requerimientos</th>
-                            <th>Inventario final</th>
-                            <th>Nº de unidades faltantes</th>
-                            <th>Costo de unidades faltantes</th>
-                            <th>Nº de unidades sobrantes</th>
-                            <th>Producción real</th>
-                            <th>Costo de almacenar</th>
-                            <th>Costo de tiempo normal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <td>TOTALES</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tfoot>
-                </table>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Periodo</th>
+                                <th>Inventario inicial</th>
+                                <th>Días de trabajo</th>
+                                <th>Tiempo disponible</th>
+                                <th>Producción real</th>
+                                <th>Requerimientos</th>
+                                <th>Inventario final</th>
+                                <th>Nº de unidades faltantes</th>
+                                <th>Costo de unidades faltantes</th>
+                                <th>Nº de unidades sobrantes</th>
+                                <th>Producción real</th>
+                                <th>Costo de almacenar</th>
+                                <th>Costo de tiempo normal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td>TOTALES</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tfoot>
+                    </table>
+                </div>
                 <br>
                 <h6>Resultados generales</h6>
                 <form class="row g-3" role="form">
