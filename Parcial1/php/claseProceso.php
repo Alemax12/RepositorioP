@@ -1,6 +1,10 @@
 <?php
 class Proceso
 {
+    private $DADPlan;
+    private $TEstandar;
+    private $DPDProduccion;
+    private $HLDiarias;
     private $CDContratar;
     private $CDDespedir;
     private $CDTNormal;
@@ -17,15 +21,16 @@ class Proceso
     private $InventarioInicial;
     private $InventarioFinal;
     private $UnidadesFaltantes;
+    private $CostoUnidadesFaltantes;
     private $CostoAlmacenar;
     private $CostoTiempoNormal;
-    private $DADPlan;
+    private $Subtotal;
 
-    public function __construct($DADPlan, $TEstandar, $DLaborales, $HLDiarias, $CDContratar, $CDDespedir, $CDTNormal, $CDTExtra, $CDMDInvetarios, $CDFaltantes, $CDSubcontratar, $TDProcesamiento, $HTrabajo, $NITrabajadores)
+    public function __construct($DADPlan, $TEstandar,$DPDProduccion, $HLDiarias, $CDContratar, $CDDespedir, $CDTNormal, $CDTExtra, $CDMDInvetarios, $CDFaltantes, $CDSubcontratar, $TDProcesamiento, $HTrabajo, $NITrabajadores,$Requerimiento)
     {
         $this->DADPlan = $DADPlan;
         $this->TEstandar = $TEstandar;
-        $this->DLaborales = $DLaborales;
+        $this->DPDProduccion = $DPDProduccion;
         $this->HLDiarias = $HLDiarias;
         $this->CDContratar = $CDContratar;
         $this->CDDespedir = $CDDespedir;
@@ -37,6 +42,7 @@ class Proceso
         $this->TDProcesamiento = $TDProcesamiento;
         $this->HTrabajo = $HTrabajo;
         $this->NITrabajadores = $NITrabajadores;
+        $this->Requerimiento = $Requerimiento;
 
         
         $this->NumeroTrabajadores = 0;
@@ -47,29 +53,29 @@ class Proceso
         $this->UnidadesFaltantes = 0;
         $this->CostoAlmacenar = 0;
         $this->CostoTiempoNormal = 0;
+        $this->Subtotal = 0;
+        $this->CostoUnidadesFaltantes = 0;
     }
 
 
 
 
-    public function calcularNumeroTrabajadores()
+    public function calcularResultadosMes($dias)
     {
-        $this->NumeroTrabajadores = $this->DADPlan + $this->TEstandar;
-    }
-
-    public function calcularRetraso()
-    {
-        if ($this->tiempoFlujo - $this->fechaEntrega >= 0) {
-            $this->retrasoTrabajo = $this->tiempoFlujo - $this->fechaEntrega;
-        } else {
-            $this->retrasoTrabajo = 0;
+        $this->NumeroTrabajadores = floor(($this->DADPlan * $this->TEstandar)/($this->DPDProduccion*$this->HLDiarias))+1;
+        $this->TiempoDisponible = ($dias* $this->HLDiarias* $this->NumeroTrabajadores);
+        $this->ProduccionReal = $this->TiempoDisponible/$this->TEstandar;
+        If($this->InventarioInicial+$this->ProduccionReal>$this->Requerimiento){
+            $this->InventarioFinal=$this->InventarioInicial+$this->ProduccionReal-$this->Requerimiento;
+            $this->UnidadesFaltantes=0;
+        }else{
+            $this->UnidadesFaltantes=$this->Requerimiento-$this->InventarioInicial-$this->ProduccionReal;
+            $this->InventarioFinal=0;
         }
+        $this->CostoAlmacenar=$this->CDMDInvetarios*$this->InventarioFinal;
+        $this->CostoUnidadesFaltantes=$this->CDFaltantes*$this->UnidadesFaltantes;
+        $this->Subtotal=$this->CDTNormal*$this->TiempoDisponible;
     }
-
-
-
-
-
 
 
     /**
@@ -448,6 +454,126 @@ class Proceso
     public function setDADPlan($DADPlan)
     {
         $this->DADPlan = $DADPlan;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of DLaborales
+     */ 
+    public function getDLaborales()
+    {
+        return $this->DLaborales;
+    }
+
+    /**
+     * Set the value of DLaborales
+     *
+     * @return  self
+     */ 
+    public function setDLaborales($DLaborales)
+    {
+        $this->DLaborales = $DLaborales;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of HLDiarias
+     */ 
+    public function getHLDiarias()
+    {
+        return $this->HLDiarias;
+    }
+
+    /**
+     * Set the value of HLDiarias
+     *
+     * @return  self
+     */ 
+    public function setHLDiarias($HLDiarias)
+    {
+        $this->HLDiarias = $HLDiarias;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of DPDProduccion
+     */ 
+    public function getDPDProduccion()
+    {
+        return $this->DPDProduccion;
+    }
+
+    /**
+     * Set the value of DPDProduccion
+     *
+     * @return  self
+     */ 
+    public function setDPDProduccion($DPDProduccion)
+    {
+        $this->DPDProduccion = $DPDProduccion;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Requerimiento
+     */ 
+    public function getRequerimiento()
+    {
+        return $this->Requerimiento;
+    }
+
+    /**
+     * Set the value of Requerimiento
+     *
+     * @return  self
+     */ 
+    public function setRequerimiento($Requerimiento)
+    {
+        $this->Requerimiento = $Requerimiento;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of CostoUnidadesFaltantes
+     */ 
+    public function getCostoUnidadesFaltantes()
+    {
+        return $this->CostoUnidadesFaltantes;
+    }
+
+    /**
+     * Set the value of CostoUnidadesFaltantes
+     *
+     * @return  self
+     */ 
+    public function setCostoUnidadesFaltantes($CostoUnidadesFaltantes)
+    {
+        $this->CostoUnidadesFaltantes = $CostoUnidadesFaltantes;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Subtotal
+     */ 
+    public function getSubtotal()
+    {
+        return $this->Subtotal;
+    }
+
+    /**
+     * Set the value of Subtotal
+     *
+     * @return  self
+     */ 
+    public function setSubtotal($Subtotal)
+    {
+        $this->Subtotal = $Subtotal;
 
         return $this;
     }
