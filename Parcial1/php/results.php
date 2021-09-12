@@ -1,3 +1,21 @@
+<?php
+$CDContratar = $_POST["CDContratar"];
+$CDDespedir = $_POST["CDDespedir"];
+$CDTNormal = $_POST["CDTNormal"];
+$CDTExtra = $_POST["CDTExtra"];
+$CDMInventarios = $_POST["CDMInventarios"];
+$CDFaltantes = $_POST["CDFaltantes"];
+$CDSubcontratar = $_POST["CDSubcontratar"];
+$TDProcesamiento = $_POST["TDProcesamiento"];
+$HDTrabajo = $_POST["HDTrabajo"];
+$NIDTrabajadores = $_POST["TEstandar"];
+$DLaborales = $_POST["DLaborales"];
+$HLDiarias = $_POST["HLDiarias"];
+$NIDTrabajadores = $_POST["NIDTrabajadores"];
+
+?>
+
+
 
 
 <!doctype html>
