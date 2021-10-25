@@ -15,152 +15,61 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
         integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous">
-
+    
     </script>
-    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css"
+    rel="stylesheet" type="text/css">
 
-    <title>Programacion a corto plazo</title>
+    <title>LABORATORIO</title>
 </head>
 
 <body>
-
     <div class="container">
         <div class="p-5 bg-secondary bg-opacity-25 rounded-3">
-            <h1>PLANEACION AGREGADA</h1>
+            <h1>MENU EJERCICIOS</h1>
         </div>
-
-        <br>
-        <!--inicio de tarjeta-->
-        <div class="card">
-            <div class="card-header text-white bg-dark">
-                PLAN AGREGADO: FUERZA LABORAL CONSTANTE
+    
+<br>
+    <div class="card">
+        <div class="card-header text-white bg-dark">
+            Listado de Ejercicios
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Laboratorio #2</h5>
+            <p class="card-text">Este es el menu del taller 2 en programacion 4 por favor seleccione una opcion.</p>
+            <a class="btn btn-primary bg-dark" href="html/punto1.html" role="button">Clientes</a>
+            <a class="btn btn-primary bg-dark" href="html/punto2.html" role="button">Servicios</a>
+            <a class="btn btn-primary bg-dark" href="html/punto3.html" role="button">Servicios Realizados</a>
+            <button type="button" class="btn btn-primary  bg-dark" data-bs-toggle="modal"
+            data-bs-target="#exampleModal">
+            Integrantes
+        </button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Integrantes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Alejandro Salas Tovar</p>
+                        <p>Hector Julian Prato</p>
+                        <p>GRUPO S6AE</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">Aceptar</button>
+                    </div>
+                </div>
             </div>
-
-
-            <div class="card-body">
-                <h5 class="card-title">Ingreso de datos</h5>
-                <p class="card-text">Ingrese a continuacion los datos requeridos para calcular el costo total del plan
-                </p>
-
-                <form class="row g-3" role="form" action="php/results.php" method="POST">
-                    <div>
-                        <h6 class="btn btn-primary bg-dark disabled col-12">Informacion del negocio</h6>
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Costo de contratar:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDContratar"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Costo de despedir:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDDespedir"
-                            placeholder="Ingrese">
-                    </div>
-
-                    <div class="form-group col-3">
-                        <label>Costo de tiempo normal (mano de obra):</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDTNormal"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-4">
-                        <label>Costo de tiempo extra (mano de obra):</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDTExtra"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-4">
-                        <label>Costo de mantenimiento de inventarios:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDMDInventarios"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-4">
-                        <label>Costo de faltantes:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDFaltantes"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Costo de subcontratar:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="CDSubcontratar"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Tiempo de procesamiento:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="TDProcesamiento"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Horas de trabajo:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="HDTrabajo"
-                            placeholder="Ingrese">
-                    </div>
-                    <div class="form-group col-3">
-                        <label>Número inicial de trabajadores:</label>
-                        <input autocomplete="off" type="text" class="form-control" name="NIDTrabajadores"
-                            placeholder="Ingrese">
-                    </div>
-                    <br><br>
-                    <div>
-                        <h6 class="btn btn-primary bg-dark disabled col-12">Requerimientos</h6>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group">
-
-                            <label>Requerimientos MES #1:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req1"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group ">
-                            <label>Requerimientos MES #2:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req2"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group ">
-
-                            <label>Requerimientos MES #3:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req3"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group">
-
-                            <label>Requerimientos MES #4:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req4"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group">
-
-                            <label>Requerimientos MES #5:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req5"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <div class="form-group col-2">
-                        <div class="form-group ">
-
-                            <label>Requerimientos MES #6:</label>
-                            <input autocomplete="off" type="text" class="form-control" name="req6"
-                                placeholder="Ingrese la cantidad">
-                        </div>
-                    </div>
-                    <br>
-
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-primary bg-dark" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            Calcular
-                        </button>
-                    </div>
-
-                </form>
-            </div>
+        </div>
         </div>
     </div>
+</div>
+
+
 
 
 </body>
