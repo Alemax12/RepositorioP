@@ -52,10 +52,10 @@ $conexion->close();
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
-                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                        <a class="nav-link" href="cliente/cliente.php">Clientes</a>
-                        <a class="nav-link" href="tratamiento/tratamiento.php">Tratamientos</a>
-                        <a class="nav-link" href="servicios/servicio.php">Servicios Realizados</a>
+                        <a class="nav-link" href="..">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="">Clientes</a>
+                        <a class="nav-link" href="../tratamiento/tratamiento.php">Tratamientos</a>
+                        <a class="nav-link" href="../servicios/servicio.php">Servicios Realizados</a>
                     </div>
                 </div>
             </div>
