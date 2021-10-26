@@ -5,7 +5,9 @@ function operaciones() {
 
     $("#nuevo").click(function () {
         $("#formulario").show();
+        $("#inputID").prop("disabled", false);
         $(this).hide();
+        $("#save").text("Guardar");
     });
     $("#cancel").click(function () {
         $("#formulario").hide();
@@ -15,18 +17,25 @@ function operaciones() {
 
     $("#save").click(function (e) {
         e.preventDefault();
-
+        $("#inputID").prop("disabled", false);
         var datos = $("#form1").serialize();
-
+        var ruta = "";
+        if ($(this).text() == "Guardar") {
+            ruta = "../cliente/GuardarCliente.php";
+        } else {
+            ruta = "../cliente/EditarCliente.php";
+        }
+        console.log(datos);
         $.ajax({
-            url: "../php/GuardarCliente.php",
+            url: ruta,
             method: "POST",
-            data: datos, //{ varianble : valor },   
+            data: datos, 
             dataType: "html"
         })
 
             .done(function (data) {
                 location.reload();
+                
             })
 
             .fail(function (jqXHR, textStatus) {
@@ -51,15 +60,15 @@ function operaciones() {
             showCancelButton: true,
             confirmButtonColor: '#d33',
             cancelButtonColor: 'lightgray',
-            cancelButtonText:"Cancelar",
+            cancelButtonText: "Cancelar",
             confirmButtonText: 'Eliminar'
         }).then((result) => {
             if (result.isConfirmed) {
                 const id = $(this).data("id");
                 $.ajax({
-                    url: "../php/EliminarCliente.php",
+                    url: "../cliente/EliminarCliente.php",
                     method: "POST",
-                    data: { id: id }, //{ varianble : valor },   
+                    data: { id: id }, 
                     dataType: "html"
                 })
 
@@ -79,5 +88,36 @@ function operaciones() {
                     });
             }
         })
+    });
+
+    $(".edit").click(function () {
+
+        const id = $(this).data("id");
+        $.ajax({
+            url: "../cliente/ConsultarCliente.php",
+            method: "POST",
+            data: { id: id }, 
+            dataType: "json"
+        })
+
+            .done(function (data) {
+                $("#save").text("Actualizar");
+                $("#inputID").prop("disabled", true);
+                $("#inputID").val(data.id_cliente);
+                $("#inputName").val(data.nom_cliente);
+                $("#formulario").show();
+                $("#nuevo").hide();
+            })
+
+            .fail(function (jqXHR, textStatus) {
+                Swal.fire({
+                    position: 'top-end',
+                    type: 'error',
+                    title: 'Ocurrió un error : ' + textStatus,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            });
     });
 }
