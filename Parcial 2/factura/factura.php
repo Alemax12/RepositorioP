@@ -112,6 +112,7 @@ $conexion->close();
                             <label>ID factura:</label>
                             <input autocomplete="off" type="number" class="form-control" name="id" id="inputID" placeholder="Ingrese numero" value="">
                         </div>
+
                         <div class="form-group col-3">
                             <label>Empleado:</label>
                             <select class="form-control" name="empleado" id="empleadoINP">
@@ -121,6 +122,7 @@ $conexion->close();
                                 <?php } ?>
                             </select>
                         </div>
+
                         <div class="form-group col-3">
                             <label>Cliente:</label>
                             <select class="form-control" name="cliente" id="clienteINP">
@@ -130,6 +132,7 @@ $conexion->close();
                                 <?php } ?>
                             </select>
                         </div>
+                        
                         <div class="form-group col-3">
                             <label>Tratamiento:</label>
                             <select class="form-control" name="tratamiento" id="tratamientoINP">
