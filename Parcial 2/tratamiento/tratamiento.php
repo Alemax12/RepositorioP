@@ -2,8 +2,8 @@
 
 include_once('../Connection.php');
 
-$sql = "SELECT id_cliente, nom_cliente FROM cliente"
-    . " ORDER BY id_cliente";
+$sql = "SELECT id_servicio, nom_servicio FROM servicio"
+    . " ORDER BY id_servicio";
 
 $resultado = $conexion->query($sql)
     or die(mysqli_errno($conexion) . " : "
@@ -32,13 +32,13 @@ $conexion->close();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link href="../styles/style.css" rel="stylesheet" type="text/css">
 
-    <title>CLIENTES</title>
+    <title>TRATAMIENTOS</title>
 </head>
 
 <body>
     <div class="container">
         <div class="p-5 bg-secondary bg-opacity-25 rounded-3">
-            <h1>CLIENTES</h1>
+            <h1>TRATAMIENTOS</h1>
         </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -49,9 +49,9 @@ $conexion->close();
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link" href="..">Inicio</a>
-                        <a class="nav-link active" aria-current="page" href="">Clientes</a>
+                        <a class="nav-link" href="../cliente/cliente.php">Clientes</a>
                         <a class="nav-link" href="../empleado/empleado.php">Empleados</a>
-                        <a class="nav-link" href="../tratamiento/tratamiento.php">Tratamientos</a>
+                        <a class="nav-link active" aria-current="page" href="">Tratamientos</a>
                         <a class="nav-link" href="../factura/factura.php">Servicios Realizados</a>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ $conexion->close();
         <br>
         <div class="card">
             <div class="card-header text-white bg-dark">
-                Informacion del cliente
+                Informacion del tratamiento
             </div>
             <div class="card-body">
                 <button type="button" class="btn btn-secondary" id="nuevo">Nuevo</button>
@@ -69,11 +69,11 @@ $conexion->close();
                     <form class="row g-3" role="form" id="form1">
 
                         <div class="form-group col-3">
-                            <label>ID cliente:</label>
+                            <label>ID tratamiento:</label>
                             <input autocomplete="off" type="number" class="form-control" name="id" id="inputID" placeholder="Ingrese numero" value="">
                         </div>
                         <div class="form-group col-3">
-                            <label>Nombre cliente:</label>
+                            <label>Nombre tratamiento:</label>
                             <input autocomplete="off" type="text" class="form-control" name="name" id="inputName" placeholder="Ingrese el nombre" value="">
                         </div>
 
@@ -96,13 +96,13 @@ $conexion->close();
                     <tbody>
                         <tr>
                             <?php foreach ($listado as $fila) { ?>
-                                <td><?php echo $fila['id_cliente'] ?> </td>
-                                <td><?php echo utf8_encode($fila['nom_cliente']) ?> </td>
+                                <td><?php echo $fila['id_servicio'] ?> </td>
+                                <td><?php echo utf8_encode($fila['nom_servicio']) ?> </td>
                                 <td>
-                                    <button class="btn btn-success btn-sm edit" data-id="<?php echo $fila['id_cliente'] ?>">
+                                    <button class="btn btn-success btn-sm edit" data-id="<?php echo $fila['id_servicio'] ?>">
                                         <i class="fa fa-pencil" aria-hidden="true"></i>
                                     </button>
-                                    <button class="btn btn-danger btn-sm delete" data-id="<?php echo $fila['id_cliente'] ?>">
+                                    <button class="btn btn-danger btn-sm delete" data-id="<?php echo $fila['id_servicio'] ?>">
                                         <i class="fa fa-trash" aria-hidden="true"></i>
                                     </button>
                                 </td>
@@ -127,7 +127,7 @@ $conexion->close();
             $("#tabla").DataTable();
         });
     </script>
-    <script type="text/javascript" src="../js/funcionesCliente.js"></script>
+    <script type="text/javascript" src="../js/funcionesTratamiento.js"></script>
     <script type="text/javascript">
         $(document).ready(operaciones)
     </script>
